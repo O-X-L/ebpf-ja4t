@@ -1,6 +1,6 @@
 
 init:
-    go mod tidy
+	go mod tidy
 
-build:
-    bash scripts/build.sh
+build_all:
+	bash scripts/build.sh

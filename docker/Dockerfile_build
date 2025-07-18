@@ -1,23 +1,14 @@
-FROM debian:12-slim
+FROM golang:1.24-bookworm AS builder
 
-# INIT: docker build -t ebpf-compiler .
-# BUILD BINARY:
-#   docker run --rm -v "$(pwd)":/app ebpf-compiler clang -O2 -target bpf -c /app/ja4t_kern.c -o /app/ja4t_kern.o
-
-ENV DEBIAN_FRONTEND=noninteractive
-
-RUN apt-get update && \
-    apt-get install -y --no-install-recommends \
-    build-essential \
+RUN apt-get update && apt-get install -y \
     clang \
     llvm \
-    libelf-dev \
-    zlib1g-dev \
-    libbpf-dev \
     bpftool \
-    linux-headers-generic && \
-    apt-get clean && \
-    rm -rf /var/lib/apt/lists/*
+    libelf-dev \
+    libbpf-dev \
+    build-essential \
+    git \
+    --no-install-recommends \
+    && rm -rf /var/lib/apt/lists/*
 
-WORKDIR /app
-
+WORKDIR /repo

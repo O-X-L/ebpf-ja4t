@@ -32,14 +32,10 @@ But the JA4T algorithm has some usage-limitations - see: [FoxIO-LLC/ja4](https:/
 
 ----
 
-## Development
+## Contribute
 
-See eBPF documentation:
-* [eBPF Docs](https://docs.ebpf.io/)
-* [Learning eBPF](https://cilium.isovalent.com/hubfs/Learning-eBPF%20-%20Full%20book.pdf)
-* [Cilium Docs](https://docs.cilium.io/en/latest/reference-guides/bpf/)
+Contributions are welcome :
 
-You will need:
-* Docker to build the eBPF binary from C (*or install the build-dependencies as seen in the dockerfile locally..*)
-* [Go in the required version](https://go.dev/doc/install) (*see go.mod*)
-* Knowledge about how eBPF works
+But please do not post any generic AI-slop.. thanks.
+
+For more information see: [Contribute](https://github.com/O-X-L/ebpf-ja4t/blob/latest/CONTRIBUTE.md)
